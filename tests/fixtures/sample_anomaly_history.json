@@ -1,0 +1,8 @@
+[
+  {"pipeline_name": "etl_sales", "timestamp": "2024-06-01T08:00:00", "level": "OK", "error_rate": 0.01, "latency_ms": 120.0, "rows_processed": 5000},
+  {"pipeline_name": "etl_sales", "timestamp": "2024-06-01T09:00:00", "level": "OK", "error_rate": 0.01, "latency_ms": 118.0, "rows_processed": 5100},
+  {"pipeline_name": "etl_sales", "timestamp": "2024-06-01T10:00:00", "level": "OK", "error_rate": 0.01, "latency_ms": 122.0, "rows_processed": 4900},
+  {"pipeline_name": "etl_sales", "timestamp": "2024-06-01T11:00:00", "level": "OK", "error_rate": 0.01, "latency_ms": 119.0, "rows_processed": 5050},
+  {"pipeline_name": "etl_sales", "timestamp": "2024-06-01T12:00:00", "level": "OK", "error_rate": 0.01, "latency_ms": 121.0, "rows_processed": 4980},
+  {"pipeline_name": "etl_sales", "timestamp": "2024-06-01T13:00:00", "level": "CRITICAL", "error_rate": 0.87, "latency_ms": 950.0, "rows_processed": 4800}
+]

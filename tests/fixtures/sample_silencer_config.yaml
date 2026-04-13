@@ -1,0 +1,10 @@
+rules:
+  - pipeline_name: "etl_ingest"
+    reason: "Scheduled maintenance window"
+    until: "2099-12-31T23:59:59+00:00"
+    levels:
+      - "warning"
+      - "critical"
+  - pipeline_name: "*"
+    reason: "Global freeze during deploy"
+    until: "2000-01-01T00:00:00+00:00"

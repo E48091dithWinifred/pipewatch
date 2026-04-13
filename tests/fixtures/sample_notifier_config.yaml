@@ -1,0 +1,5 @@
+notifier:
+  log_enabled: true
+  email_enabled: false
+  webhook_enabled: true
+  webhook_url: "https://hooks.example.com/pipewatch"

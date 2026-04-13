@@ -1,0 +1,17 @@
+rules:
+  - tag: "healthy"
+    level: "OK"
+    max_error_rate: 0.01
+
+  - tag: "flaky"
+    min_error_rate: 0.05
+
+  - tag: "critical-alert"
+    level: "CRITICAL"
+
+  - tag: "ingest-pipeline"
+    name_contains: "ingest"
+
+  - tag: "high-error"
+    min_error_rate: 0.10
+    level: "WARNING"

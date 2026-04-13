@@ -1,0 +1,23 @@
+[
+  {
+    "pipeline": "ingest_orders",
+    "level": "ok",
+    "message": "All checks passed",
+    "error_rate": 0.005,
+    "latency_ms": 95.3
+  },
+  {
+    "pipeline": "transform_customers",
+    "level": "warning",
+    "message": "Latency above warning threshold",
+    "error_rate": 0.012,
+    "latency_ms": 620.0
+  },
+  {
+    "pipeline": "load_warehouse",
+    "level": "critical",
+    "message": "Error rate above critical threshold",
+    "error_rate": 0.31,
+    "latency_ms": 1850.5
+  }
+]

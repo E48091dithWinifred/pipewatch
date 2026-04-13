@@ -63,3 +63,16 @@ def format_summary(statuses: List[PipelineStatus], *, title: str = "Pipeline Sum
 def print_summary(statuses: List[PipelineStatus], *, title: str = "Pipeline Summary") -> None:
     """Print the formatted summary to stdout."""
     print(format_summary(statuses, title=title))
+
+
+def filter_by_level(statuses: List[PipelineStatus], level: AlertLevel) -> List[PipelineStatus]:
+    """Return only the pipeline statuses matching the given alert level.
+
+    Args:
+        statuses: The full list of pipeline statuses to filter.
+        level: The alert level to filter by (e.g. AlertLevel.CRITICAL).
+
+    Returns:
+        A list containing only statuses whose level matches the given level.
+    """
+    return [s for s in statuses if s.level == level]

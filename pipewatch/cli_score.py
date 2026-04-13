@@ -25,18 +25,36 @@ def _build_score_parser(sub: "argparse._SubParsersAction") -> argparse.ArgumentP
 
 
 def _load_statuses(path: str) -> List[PipelineStatus]:
+    """Load pipeline statuses from a JSON file produced by 'pipewatch run --json'.
+
+    Args:
+        path: Filesystem path to the JSON file.
+
+    Returns:
+        A list of :class:`PipelineStatus` objects.
+
+    Raises:
+        FileNotFoundError: If *path* does not exist.
+        json.JSONDecodeError: If the file content is not valid JSON.
+        KeyError: If a required field (``pipeline`` or ``level``) is missing from an entry.
+    """
     data = json.loads(Path(path).read_text())
+    if not isinstance(data, list):
+        raise ValueError(f"Expected a JSON array in '{path}', got {type(data).__name__}")
     statuses: List[PipelineStatus] = []
     for item in data:
-        statuses.append(
-            PipelineStatus(
-                pipeline=item["pipeline"],
-                level=AlertLevel[item["level"]],
-                error_rate=float(item.get("error_rate", 0.0)),
-                latency_ms=float(item.get("latency_ms", 0.0)),
-                message=item.get("message", ""),
+        try:
+            statuses.append(
+                PipelineStatus(
+                    pipeline=item["pipeline"],
+                    level=AlertLevel[item["level"]],
+                    error_rate=float(item.get("error_rate", 0.0)),
+                    latency_ms=float(item.get("latency_ms", 0.0)),
+                    message=item.get("message", ""),
+                )
             )
-        )
+        except KeyError as exc:
+            raise KeyError(f"Missing required field {exc} in pipeline entry: {item!r}") from exc
     return statuses
 
 
@@ -56,7 +74,7 @@ def _format_row(ps: PipelineScore, color: bool) -> str:
 def cmd_score(args: argparse.Namespace) -> None:
     try:
         statuses = _load_statuses(args.input)
-    except (FileNotFoundError, json.JSONDecodeError) as exc:
+    except (FileNotFoundError, json.JSONDecodeError, KeyError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         sys.exit(1)
 

@@ -1,0 +1,5 @@
+[
+  {"pipeline_name": "ingest_orders", "level": "OK", "message": ""},
+  {"pipeline_name": "transform_users", "level": "WARNING", "message": "error rate too high"},
+  {"pipeline_name": "load_events", "level": "CRITICAL", "message": "latency exceeded threshold"}
+]

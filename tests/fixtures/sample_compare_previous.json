@@ -1,0 +1,23 @@
+[
+  {
+    "pipeline_name": "ingest_orders",
+    "level": "ok",
+    "error_rate": 0.005,
+    "latency_ms": 142.3,
+    "message": ""
+  },
+  {
+    "pipeline_name": "transform_users",
+    "level": "warning",
+    "error_rate": 0.07,
+    "latency_ms": 310.0,
+    "message": "elevated error rate"
+  },
+  {
+    "pipeline_name": "load_warehouse",
+    "level": "ok",
+    "error_rate": 0.001,
+    "latency_ms": 88.5,
+    "message": ""
+  }
+]

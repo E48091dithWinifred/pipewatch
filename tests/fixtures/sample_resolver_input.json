@@ -1,0 +1,23 @@
+[
+  {
+    "pipeline_name": "etl_orders",
+    "level": "critical",
+    "error_rate": 0.18,
+    "latency_ms": 7200,
+    "message": "timeout on source db"
+  },
+  {
+    "pipeline_name": "etl_users",
+    "level": "warning",
+    "error_rate": 0.04,
+    "latency_ms": 950,
+    "message": ""
+  },
+  {
+    "pipeline_name": "etl_events",
+    "level": "ok",
+    "error_rate": 0.0,
+    "latency_ms": 210,
+    "message": ""
+  }
+]

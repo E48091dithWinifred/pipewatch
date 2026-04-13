@@ -1,0 +1,23 @@
+[
+  {
+    "pipeline_name": "ingest_orders",
+    "level": "OK",
+    "tags": ["healthy"],
+    "badge": "✅",
+    "summary": "error_rate=0.50%; latency=120ms"
+  },
+  {
+    "pipeline_name": "transform_users",
+    "level": "WARNING",
+    "tags": ["warning", "high-error-rate"],
+    "badge": "⚠️",
+    "summary": "error_rate=7.00%; latency=450ms; error rate above warning threshold"
+  },
+  {
+    "pipeline_name": "export_reports",
+    "level": "CRITICAL",
+    "tags": ["critical", "slow"],
+    "badge": "🔴",
+    "summary": "latency=2100ms; latency above critical threshold"
+  }
+]

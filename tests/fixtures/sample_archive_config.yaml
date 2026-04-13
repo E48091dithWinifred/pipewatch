@@ -1,0 +1,4 @@
+history_path: tests/fixtures/sample_history.json
+archive_path: /tmp/pipewatch_archive.json
+max_age_days: 30
+dry_run: false

@@ -1,51 +1,65 @@
-"""Formats and prints pipeline health reports to stdout."""
+"""Formatting helpers for CLI output."""
+
+from __future__ import annotations
 
 from typing import List
 
 from pipewatch.checker import AlertLevel, PipelineStatus
+from pipewatch.digest import Digest, PipelineDigest
 
-_LEVEL_COLORS = {
-    AlertLevel.OK: "\033[92m",       # green
-    AlertLevel.WARNING: "\033[93m",  # yellow
-    AlertLevel.CRITICAL: "\033[91m", # red
-}
 _RESET = "\033[0m"
+_COLORS = {
+    AlertLevel.OK: "\033[32m",       # green
+    AlertLevel.WARNING: "\033[33m",  # yellow
+    AlertLevel.CRITICAL: "\033[31m", # red
+}
 
 
-def _colorize(text: str, level: AlertLevel, use_color: bool = True) -> str:
-    if not use_color:
-        return text
-    color = _LEVEL_COLORS.get(level, "")
+def _colorize(text: str, level: AlertLevel) -> str:
+    color = _COLORS.get(level, "")
     return f"{color}{text}{_RESET}"
 
 
-def format_status_line(status: PipelineStatus, use_color: bool = True) -> str:
-    """Return a single formatted line summarising *status*."""
-    level_tag = _colorize(f"[{status.level.name}]", status.level, use_color)
-    messages = "; ".join(status.messages) if status.messages else "all checks passed"
-    return f"{level_tag} {status.pipeline_name}: {messages}"
+def format_status_line(status: PipelineStatus, use_color: bool = False) -> str:
+    label = status.level.value.upper().ljust(8)
+    msg = f" — {status.message}" if status.message else ""
+    line = f"[{label}] {status.pipeline_name}{msg}"
+    if use_color:
+        line = _colorize(line, status.level)
+    return line
 
 
-def print_report(
-    statuses: List[PipelineStatus],
-    use_color: bool = True,
-    verbose: bool = False,
-) -> int:
-    """Print a health report for all pipelines.
+def print_report(statuses: List[PipelineStatus], use_color: bool = False) -> None:
+    for s in statuses:
+        print(format_status_line(s, use_color=use_color))
 
-    Returns the number of pipelines that are not OK.
-    """
-    issues = 0
-    for status in statuses:
-        line = format_status_line(status, use_color=use_color)
-        print(line)
-        if verbose and status.metrics:
-            m = status.metrics
-            print(
-                f"    error_rate={m.error_rate:.2%}  "
-                f"latency={m.latency_ms:.1f}ms  "
-                f"processed={m.records_processed}"
-            )
-        if status.level != AlertLevel.OK:
-            issues += 1
-    return issues
+
+def format_digest_line(pd: PipelineDigest, use_color: bool = False) -> str:
+    trend_symbol = ""
+    if pd.trend:
+        if pd.trend.is_degrading:
+            trend_symbol = " ↑err"
+        elif pd.trend.is_improving:
+            trend_symbol = " ↓err"
+
+    line = (
+        f"{pd.pipeline_name:<20} "
+        f"runs={pd.total_runs:<4} "
+        f"ok={pd.ok_count:<4} "
+        f"warn={pd.warning_count:<4} "
+        f"crit={pd.critical_count:<4} "
+        f"score={pd.health_score:<6} "
+        f"{pd.sparkline}{trend_symbol}"
+    )
+    return line
+
+
+def print_digest(digest: Digest, use_color: bool = False) -> None:
+    header = f"=== Digest (last {digest.window_hours}h) ==="
+    print(header)
+    for pd in digest.pipelines:
+        print(format_digest_line(pd, use_color=use_color))
+    if digest.most_critical:
+        mc = digest.most_critical
+        suffix = f" (score {mc.health_score})"
+        print(f"\nLowest health: {mc.pipeline_name}{suffix}")

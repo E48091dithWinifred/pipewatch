@@ -1,0 +1,38 @@
+[
+  {
+    "pipeline_name": "orders_etl",
+    "timestamp": "2024-01-15T08:00:00+00:00",
+    "alert_level": "ok",
+    "error_rate": 0.01,
+    "latency_ms": 120.5,
+    "rows_processed": 5000,
+    "message": ""
+  },
+  {
+    "pipeline_name": "orders_etl",
+    "timestamp": "2024-01-15T09:00:00+00:00",
+    "alert_level": "warning",
+    "error_rate": 0.06,
+    "latency_ms": 310.0,
+    "rows_processed": 4800,
+    "message": "error rate above warning threshold"
+  },
+  {
+    "pipeline_name": "inventory_sync",
+    "timestamp": "2024-01-15T08:30:00+00:00",
+    "alert_level": "critical",
+    "error_rate": 0.18,
+    "latency_ms": 850.0,
+    "rows_processed": 1200,
+    "message": "error rate above critical threshold"
+  },
+  {
+    "pipeline_name": "inventory_sync",
+    "timestamp": "2024-01-15T09:30:00+00:00",
+    "alert_level": "ok",
+    "error_rate": 0.02,
+    "latency_ms": 95.0,
+    "rows_processed": 3400,
+    "message": ""
+  }
+]

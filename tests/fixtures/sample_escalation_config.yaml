@@ -1,0 +1,7 @@
+rules:
+  - from_level: WARNING
+    to_level: CRITICAL
+    after_runs: 3
+  - from_level: CRITICAL
+    to_level: CRITICAL
+    after_runs: 1

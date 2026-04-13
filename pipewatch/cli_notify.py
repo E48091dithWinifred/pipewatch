@@ -23,12 +23,24 @@ def _build_notify_parser(subparsers: argparse._SubParsersAction) -> None:  # typ
     p.add_argument("--webhook-url", dest="webhook_url", default=None)
 
 
+_LEVEL_MAP = {
+    "ok": AlertLevel.OK,
+    "warning": AlertLevel.WARNING,
+    "critical": AlertLevel.CRITICAL,
+}
+
+
 def _level_from_str(value: str) -> AlertLevel:
-    return {
-        "ok": AlertLevel.OK,
-        "warning": AlertLevel.WARNING,
-        "critical": AlertLevel.CRITICAL,
-    }[value]
+    """Convert a string level name to an :class:`AlertLevel` enum value.
+
+    Raises ``KeyError`` if *value* is not one of ``ok``, ``warning``, or
+    ``critical``.
+    """
+    try:
+        return _LEVEL_MAP[value]
+    except KeyError:
+        valid = ", ".join(_LEVEL_MAP)
+        raise ValueError(f"Unknown alert level {value!r}. Valid choices: {valid}") from None
 
 
 def cmd_notify(args: argparse.Namespace) -> List[NotificationResult]:

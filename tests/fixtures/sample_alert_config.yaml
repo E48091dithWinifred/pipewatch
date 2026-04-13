@@ -1,0 +1,9 @@
+# Sample alert configuration for pipewatch tests
+alerts:
+  email_to:
+    - ops@example.com
+    - oncall@example.com
+  email_from: pipewatch@company.com
+  smtp_host: smtp.company.com
+  smtp_port: 587
+  min_level: warning

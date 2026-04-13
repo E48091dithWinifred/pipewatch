@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2024-06-01T10:00:00+00:00",
+    "pipeline": "ingest_orders",
+    "level": "WARNING",
+    "message": "error rate above warning threshold",
+    "source": "checker"
+  },
+  {
+    "timestamp": "2024-06-01T10:05:00+00:00",
+    "pipeline": "transform_users",
+    "level": "CRITICAL",
+    "message": "latency exceeded critical threshold",
+    "source": "checker"
+  },
+  {
+    "timestamp": "2024-06-01T10:10:00+00:00",
+    "pipeline": "ingest_orders",
+    "level": "OK",
+    "message": "pipeline recovered",
+    "source": "pipewatch"
+  }
+]

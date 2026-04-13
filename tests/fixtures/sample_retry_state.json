@@ -1,0 +1,23 @@
+{
+  "etl_orders": {
+    "pipeline": "etl_orders",
+    "level": "CRITICAL",
+    "attempts": 2,
+    "last_attempt_ts": 1700000000.0,
+    "resolved": false
+  },
+  "etl_users": {
+    "pipeline": "etl_users",
+    "level": "WARNING",
+    "attempts": 1,
+    "last_attempt_ts": 1700000100.0,
+    "resolved": false
+  },
+  "etl_events": {
+    "pipeline": "etl_events",
+    "level": "CRITICAL",
+    "attempts": 3,
+    "last_attempt_ts": 1700000200.0,
+    "resolved": true
+  }
+}

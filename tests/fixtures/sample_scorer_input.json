@@ -1,0 +1,23 @@
+[
+  {
+    "pipeline": "ingest_raw",
+    "level": "OK",
+    "error_rate": 0.005,
+    "latency_ms": 95.0,
+    "message": ""
+  },
+  {
+    "pipeline": "transform_clean",
+    "level": "WARNING",
+    "error_rate": 0.06,
+    "latency_ms": 750.0,
+    "message": "latency elevated"
+  },
+  {
+    "pipeline": "load_warehouse",
+    "level": "CRITICAL",
+    "error_rate": 0.22,
+    "latency_ms": 3800.0,
+    "message": "high error rate"
+  }
+]

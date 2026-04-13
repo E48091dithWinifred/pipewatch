@@ -8,3 +8,7 @@ rules:
   - pipeline_name: "*"
     reason: "Global freeze during deploy"
     until: "2000-01-01T00:00:00+00:00"
+    levels:
+      - "warning"
+      - "critical"
+      - "info"

@@ -42,6 +42,15 @@ def test_format_with_color_contains_escape():
     assert "\033[" in line
 
 
+def test_format_multiple_messages_all_included():
+    """All messages should appear in the formatted line, not just the first."""
+    messages = ["high error rate", "low throughput", "stale data"]
+    status = _make_status("orders", AlertLevel.WARNING, messages=messages)
+    line = format_status_line(status, use_color=False)
+    for msg in messages:
+        assert msg in line, f"Expected message '{msg}' to appear in formatted line"
+
+
 def test_print_report_returns_issue_count(capsys):
     statuses = [
         _make_status("a", AlertLevel.OK),

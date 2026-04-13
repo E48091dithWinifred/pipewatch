@@ -1,0 +1,7 @@
+[
+  {"pipeline_name": "alpha", "level": "OK", "message": "ok", "error_rate": 0.0, "latency_ms": 80.0},
+  {"pipeline_name": "beta", "level": "WARNING", "message": "high error rate", "error_rate": 0.06, "latency_ms": 210.0},
+  {"pipeline_name": "gamma", "level": "CRITICAL", "message": "latency critical", "error_rate": 0.02, "latency_ms": 950.0},
+  {"pipeline_name": "delta", "level": "OK", "message": "ok", "error_rate": 0.0, "latency_ms": 55.0},
+  {"pipeline_name": "epsilon", "level": "OK", "message": "ok", "error_rate": 0.01, "latency_ms": 130.0}
+]

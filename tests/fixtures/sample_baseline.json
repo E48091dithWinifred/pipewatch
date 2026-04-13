@@ -1,0 +1,14 @@
+{
+  "pipe_a": {
+    "pipeline_name": "pipe_a",
+    "avg_error_rate": 0.02,
+    "avg_latency_ms": 150.0,
+    "sample_count": 1
+  },
+  "pipe_b": {
+    "pipeline_name": "pipe_b",
+    "avg_error_rate": 0.05,
+    "avg_latency_ms": 280.0,
+    "sample_count": 1
+  }
+}

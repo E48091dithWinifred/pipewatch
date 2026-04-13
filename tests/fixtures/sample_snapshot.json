@@ -1,0 +1,8 @@
+{
+  "pipeline_name": "orders",
+  "captured_at": "2024-06-01T12:00:00+00:00",
+  "error_rate": 0.02,
+  "latency_ms": 135.5,
+  "rows_per_second": 480.0,
+  "alert_level": "OK"
+}

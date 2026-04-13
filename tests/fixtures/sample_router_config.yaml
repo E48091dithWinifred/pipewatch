@@ -1,0 +1,11 @@
+default_channel: default
+rules:
+  - channel: critical_alerts
+    levels:
+      - CRITICAL
+  - channel: warnings
+    levels:
+      - WARNING
+  - channel: ingestion
+    name_prefix: ingest_
+    levels: []

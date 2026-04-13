@@ -1,0 +1,23 @@
+[
+  {
+    "pipeline_name": "ingest_orders",
+    "level": "ok",
+    "message": "healthy",
+    "error_rate": 0.002,
+    "latency_ms": 85.0
+  },
+  {
+    "pipeline_name": "transform_users",
+    "level": "warning",
+    "message": "elevated error rate",
+    "error_rate": 0.07,
+    "latency_ms": 430.0
+  },
+  {
+    "pipeline_name": "export_reports",
+    "level": "critical",
+    "message": "pipeline stalled",
+    "error_rate": 0.38,
+    "latency_ms": 12000.0
+  }
+]

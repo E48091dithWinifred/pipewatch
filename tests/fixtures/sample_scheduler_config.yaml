@@ -1,0 +1,7 @@
+# Sample scheduler configuration for pipewatch
+# Used in documentation examples and integration tests.
+
+scheduler:
+  interval_seconds: 120   # run checks every 2 minutes
+  max_runs: null          # null = run indefinitely
+  jitter_seconds: 5       # small random offset to avoid thundering herd

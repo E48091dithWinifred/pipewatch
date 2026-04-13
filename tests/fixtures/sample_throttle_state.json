@@ -1,0 +1,14 @@
+{
+  "ingestion_pipeline::WARNING": {
+    "pipeline": "ingestion_pipeline",
+    "level": "WARNING",
+    "last_fired": "2024-06-01T12:00:00",
+    "fire_count": 3
+  },
+  "transform_pipeline::CRITICAL": {
+    "pipeline": "transform_pipeline",
+    "level": "CRITICAL",
+    "last_fired": "2024-06-01T11:45:00",
+    "fire_count": 1
+  }
+}

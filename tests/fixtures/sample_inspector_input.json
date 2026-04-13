@@ -1,0 +1,23 @@
+[
+  {
+    "pipeline_name": "ingest_raw",
+    "level": "ok",
+    "error_rate": 0.01,
+    "latency_ms": 120.0,
+    "message": ""
+  },
+  {
+    "pipeline_name": "transform_clean",
+    "level": "warning",
+    "error_rate": 0.07,
+    "latency_ms": 350.0,
+    "message": "Error rate above warning threshold"
+  },
+  {
+    "pipeline_name": "load_warehouse",
+    "level": "critical",
+    "error_rate": 0.18,
+    "latency_ms": 650.0,
+    "message": "Error rate above critical threshold"
+  }
+]

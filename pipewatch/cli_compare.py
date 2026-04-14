@@ -24,7 +24,28 @@ def _build_compare_parser(sub: argparse._SubParsersAction) -> argparse.ArgumentP
 
 
 def _load_statuses(path: str) -> List[PipelineStatus]:
-    data = json.loads(Path(path).read_text())
+    """Load a list of PipelineStatus objects from a JSON export file.
+
+    Args:
+        path: Filesystem path to the JSON export file.
+
+    Returns:
+        A list of PipelineStatus instances parsed from the file.
+
+    Raises:
+        SystemExit: If the file does not exist or contains invalid JSON.
+    """
+    file_path = Path(path)
+    if not file_path.exists():
+        print(f"Error: file not found: {path}", file=sys.stderr)
+        sys.exit(2)
+
+    try:
+        data = json.loads(file_path.read_text())
+    except json.JSONDecodeError as exc:
+        print(f"Error: invalid JSON in {path}: {exc}", file=sys.stderr)
+        sys.exit(2)
+
     statuses: List[PipelineStatus] = []
     for item in data:
         statuses.append(

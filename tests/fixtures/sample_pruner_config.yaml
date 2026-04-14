@@ -1,0 +1,6 @@
+# Sample pruner configuration for pipewatch
+max_ok_count: 2
+remove_levels:
+  - ok
+max_error_rate: 0.005
+name_prefix_exclude: "legacy_"

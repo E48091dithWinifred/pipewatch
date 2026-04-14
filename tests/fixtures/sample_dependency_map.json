@@ -1,0 +1,9 @@
+{
+  "edges": [
+    {"upstream": "raw_events",    "downstream": "clean_events"},
+    {"upstream": "clean_events",  "downstream": "session_agg"},
+    {"upstream": "clean_events",  "downstream": "user_agg"},
+    {"upstream": "session_agg",   "downstream": "reporting"},
+    {"upstream": "user_agg",      "downstream": "reporting"}
+  ]
+}

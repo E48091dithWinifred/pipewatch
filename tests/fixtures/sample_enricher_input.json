@@ -1,0 +1,23 @@
+[
+  {
+    "name": "etl.orders",
+    "level": "ok",
+    "message": "",
+    "error_rate": 0.0,
+    "latency_ms": 75.0
+  },
+  {
+    "name": "etl.customers",
+    "level": "warning",
+    "message": "high latency",
+    "error_rate": 0.02,
+    "latency_ms": 620.0
+  },
+  {
+    "name": "stream.events",
+    "level": "critical",
+    "message": "error spike",
+    "error_rate": 0.15,
+    "latency_ms": 1200.0
+  }
+]

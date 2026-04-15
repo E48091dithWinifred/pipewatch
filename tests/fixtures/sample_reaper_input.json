@@ -1,0 +1,18 @@
+[
+  {
+    "pipeline_name": "etl-fresh",
+    "level": "OK",
+    "message": "ok",
+    "error_rate": 0.01,
+    "latency_ms": 120.0,
+    "checked_at": "2024-06-01T11:55:00+00:00"
+  },
+  {
+    "pipeline_name": "etl-stale",
+    "level": "WARNING",
+    "message": "high latency",
+    "error_rate": 0.05,
+    "latency_ms": 9500.0,
+    "checked_at": "2024-06-01T09:00:00+00:00"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {"pipeline_name": "ingest-raw",    "level": "OK",       "message": "OK",       "error_rate": 0.00, "latency_ms": 120.0},
+  {"pipeline_name": "transform-a",  "level": "WARNING",  "message": "Warning",  "error_rate": 0.06, "latency_ms": 310.0},
+  {"pipeline_name": "load-dw",       "level": "CRITICAL", "message": "Critical", "error_rate": 0.22, "latency_ms": 980.0},
+  {"pipeline_name": "enrich-b",      "level": "OK",       "message": "OK",       "error_rate": 0.01, "latency_ms": 95.0},
+  {"pipeline_name": "export-s3",     "level": "WARNING",  "message": "Warning",  "error_rate": 0.08, "latency_ms": 420.0}
+]

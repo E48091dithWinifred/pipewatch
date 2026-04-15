@@ -1,0 +1,30 @@
+[
+  {
+    "pipeline_name": "ingest_orders",
+    "level": "ok",
+    "error_rate": 0.0,
+    "latency_ms": 120.0,
+    "message": "all clear"
+  },
+  {
+    "pipeline_name": "transform_users",
+    "level": "warning",
+    "error_rate": 0.04,
+    "latency_ms": 340.0,
+    "message": "elevated error rate"
+  },
+  {
+    "pipeline_name": "load_events",
+    "level": "critical",
+    "error_rate": 0.18,
+    "latency_ms": 980.0,
+    "message": "critical error rate"
+  },
+  {
+    "pipeline_name": "sync_inventory",
+    "level": "ok",
+    "error_rate": 0.0,
+    "latency_ms": 90.0,
+    "message": "all clear"
+  }
+]

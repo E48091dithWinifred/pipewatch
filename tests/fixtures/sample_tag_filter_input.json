@@ -1,0 +1,5 @@
+[
+  {"pipeline_name": "ingest_raw", "level": "OK", "message": "ok", "error_rate": 0.0, "latency_ms": 120.0},
+  {"pipeline_name": "transform_core", "level": "WARNING", "message": "high latency", "error_rate": 0.02, "latency_ms": 950.0},
+  {"pipeline_name": "export_final", "level": "CRITICAL", "message": "errors spiking", "error_rate": 0.15, "latency_ms": 300.0}
+]

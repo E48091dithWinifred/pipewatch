@@ -1,0 +1,5 @@
+[
+  {"name": "ingest", "level": "ok", "message": "", "error_rate": 0.0, "latency_ms": 120.0},
+  {"name": "transform", "level": "warning", "message": "high latency", "error_rate": 0.04, "latency_ms": 850.0},
+  {"name": "export", "level": "critical", "message": "error spike", "error_rate": 0.18, "latency_ms": 300.0}
+]

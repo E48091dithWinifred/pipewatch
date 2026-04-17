@@ -1,0 +1,5 @@
+[
+  {"pipeline": "ingest_orders", "level": "ok", "timestamp": "2024-04-01T08:00:00", "error_rate": 0.001, "latency_ms": 120.5, "rows_processed": 8000},
+  {"pipeline": "ingest_users", "level": "warning", "timestamp": "2024-04-01T08:05:00", "error_rate": 0.045, "latency_ms": 340.0, "rows_processed": 3200},
+  {"pipeline": "ingest_orders", "level": "critical", "timestamp": "2024-04-01T08:10:00", "error_rate": 0.12, "latency_ms": 980.0, "rows_processed": 1500}
+]

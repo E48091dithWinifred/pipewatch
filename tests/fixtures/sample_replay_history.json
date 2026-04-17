@@ -1,0 +1,6 @@
+[
+  {"pipeline_name": "etl_sales", "checked_at": "2024-05-01T08:00:00", "level": "ok", "error_rate": 0.0, "latency_ms": 95.0},
+  {"pipeline_name": "etl_sales", "checked_at": "2024-05-01T09:00:00", "level": "warning", "error_rate": 0.04, "latency_ms": 310.0},
+  {"pipeline_name": "etl_inventory", "checked_at": "2024-05-01T09:30:00", "level": "ok", "error_rate": 0.0, "latency_ms": 80.0},
+  {"pipeline_name": "etl_sales", "checked_at": "2024-05-01T10:00:00", "level": "critical", "error_rate": 0.15, "latency_ms": 520.0}
+]

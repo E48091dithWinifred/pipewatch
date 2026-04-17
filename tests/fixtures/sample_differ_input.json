@@ -1,0 +1,10 @@
+{
+  "before": [
+    {"pipeline": "etl_main", "level": "OK", "message": "ok", "error_rate": 0.0, "latency_ms": 120.0},
+    {"pipeline": "etl_secondary", "level": "OK", "message": "ok", "error_rate": 0.01, "latency_ms": 80.0}
+  ],
+  "after": [
+    {"pipeline": "etl_main", "level": "WARNING", "message": "high latency", "error_rate": 0.0, "latency_ms": 950.0},
+    {"pipeline": "etl_secondary", "level": "OK", "message": "ok", "error_rate": 0.01, "latency_ms": 80.0}
+  ]
+}

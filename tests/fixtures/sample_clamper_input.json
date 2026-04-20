@@ -1,0 +1,6 @@
+[
+  {"name": "ingest_raw",    "level": "ok",       "message": "", "error_rate": 0.02, "latency_ms": 120.0},
+  {"name": "transform_v2",  "level": "warning",  "message": "", "error_rate": 0.45, "latency_ms": 850.0},
+  {"name": "load_warehouse","level": "critical", "message": "", "error_rate": 0.95, "latency_ms": 12000.0},
+  {"name": "export_s3",     "level": "ok",       "message": "", "error_rate": 0.00, "latency_ms": 55.0}
+]

@@ -1,0 +1,8 @@
+[
+  {"pipeline": "ingest_daily", "timestamp": "2024-03-01T08:00:00", "level": "ok", "error_rate": 0.005, "latency_ms": 95.0, "rows_processed": 8000},
+  {"pipeline": "ingest_daily", "timestamp": "2024-03-01T09:00:00", "level": "ok", "error_rate": 0.010, "latency_ms": 100.0, "rows_processed": 8100},
+  {"pipeline": "ingest_daily", "timestamp": "2024-03-01T10:00:00", "level": "warning", "error_rate": 0.015, "latency_ms": 105.0, "rows_processed": 7900},
+  {"pipeline": "transform_v2", "timestamp": "2024-03-01T08:00:00", "level": "ok", "error_rate": 0.001, "latency_ms": 50.0, "rows_processed": 4000},
+  {"pipeline": "transform_v2", "timestamp": "2024-03-01T09:00:00", "level": "ok", "error_rate": 0.001, "latency_ms": 50.0, "rows_processed": 4050},
+  {"pipeline": "transform_v2", "timestamp": "2024-03-01T10:00:00", "level": "ok", "error_rate": 0.001, "latency_ms": 50.0, "rows_processed": 4020}
+]

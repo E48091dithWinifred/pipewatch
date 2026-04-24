@@ -1,0 +1,14 @@
+{
+  "etl_orders:WARNING": {
+    "pipeline": "etl_orders",
+    "level": "WARNING",
+    "last_fired": 1700000000.0,
+    "fire_count": 3
+  },
+  "etl_users:CRITICAL": {
+    "pipeline": "etl_users",
+    "level": "CRITICAL",
+    "last_fired": 1700000120.0,
+    "fire_count": 1
+  }
+}

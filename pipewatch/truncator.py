@@ -47,7 +47,15 @@ def truncate_statuses(
     statuses: List[PipelineStatus],
     config: TruncateConfig | None = None,
 ) -> TruncateResult:
-    """Return at most config.max_items statuses from the front of *statuses*."""
+    """Return at most config.max_items statuses from the front of *statuses*.
+
+    Args:
+        statuses: The full list of pipeline statuses to truncate.
+        config: Truncation settings. Defaults to TruncateConfig() if not provided.
+
+    Returns:
+        A TruncateResult containing the kept items and metadata about the operation.
+    """
     if config is None:
         config = TruncateConfig()
     total = len(statuses)
